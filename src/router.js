@@ -2,18 +2,17 @@
  * @Author: Yun.Lei 
  * @Date: 2019-04-25 17:51:15 
  * @Last Modified by: Yun.Lei
- * @Last Modified time: 2019-04-25 18:37:45
+ * @Last Modified time: 2019-04-26 13:19:29
  */
-const HolloWorld = () => import("@src/views/index/HelloWorld.vue");
+const Index = () => import("@src/views/index/Index.vue");
 
 const routerConfig = [
     {
         path: "/",
-        component: HolloWorld,
+        component: Index,
         name: "/",
         meta: {
             title: "首页",
-            icon: "iconfont iconworkbench",
             voice: false
         },
     },
