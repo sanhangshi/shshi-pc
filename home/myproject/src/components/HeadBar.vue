@@ -1,9 +1,9 @@
 <template>
-    <div id="headBar" class="btn btn-info">
-        <button>登录</button>&nbsp;
-        <button>添加</button>&nbsp;
-        <button>状态</button>&nbsp;
-        <button>关于</button>&nbsp;
+    <div id="headBar" class="btn btn-default">
+        <button class="btn btn-default">登录</button>&nbsp;
+        <button class="btn btn-default">添加</button>&nbsp;
+        <button class="btn btn-default">状态</button>&nbsp;
+        <button class="btn btn-default">关于</button>&nbsp;
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <a id="shsTitle" class="btn btn-info">
+    <a id="shsTitle" class="btn btn-default">
         {{ name }}
     </a>
 </template>
