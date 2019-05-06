@@ -5,17 +5,27 @@
  * @Last Modified time: 2019-04-26 13:19:29
  */
 const Index = () => import("@src/views/index/Index.vue");
+const Home = () => import("../src/views/home/home.vue");
 
 const routerConfig = [
     {
-        path: "/",
+        path: "/home",
         component: Index,
-        name: "/",
+        name: "home",
         meta: {
             title: "首页",
             voice: false
         },
     },
+    {
+        path: "/shs",
+        component: Home,
+        name: "shs",
+        meta: {
+            title: "三行诗",
+            voice: false
+        }
+    }
 ];
 
 export default routerConfig;
