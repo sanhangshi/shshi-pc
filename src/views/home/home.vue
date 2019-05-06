@@ -1,19 +1,16 @@
 <template>
     <div id='homePage'>
-        <shstitle></shstitle>
-        <headBar></headBar>
+        
     </div>
 </template>
 
 <script>
-import shstitle from '../../components/Title'
-import headBar from '../../components/HeadBar'
+
 
 export default {
     name: "Home",
     components: {
-        shstitle,
-        headBar
+        
     }
 }
 </script>

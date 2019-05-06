@@ -1,37 +1,35 @@
 <template>
-    <div id="app">
-        <home></home>
+  <div id="app">
+    <div class="title">
+      <shstitle></shstitle>
+      <headBar></headBar>
     </div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import home from '../src/views/home/home.vue';
+import shstitle from "@components/Title";
+import headBar from "@components/HeadBar";
 export default {
-    name: "app",
-    components: {home}
+  name: "app",
+  components: {
+    shstitle,
+    headBar
+  }
 };
 </script>
 
 <style>
 #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    min-height: 100%;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100%;
 }
-.header {
-    background-color: #ff4444;
-}
-.main-box {
-    height: 930px;
-}
-.aside {
-    background-color: #d3dce6;
-}
-.main {
-    background-color: #fff;
-}
-.fotter {
-    background-color: #f5f5f5;
+.title {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 </style>

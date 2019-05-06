@@ -1,15 +1,24 @@
 <template>
     <div id="headBar" class="btn btn-default">
-        <el-button type="text" class="option-button">登录</el-button>&emsp;
-        <el-button type="text" class="option-button">添加</el-button>&emsp;
-        <el-button type="text" class="option-button">状态</el-button>&emsp;
-        <el-button type="text" class="option-button">关于</el-button>&emsp;
+        <el-button type="text" class="option-button"  @click="tabClick('/login')">登录</el-button>&emsp;
+        <el-button type="text" class="option-button"  @click="tabClick('/add')">添加</el-button>&emsp;
+        <el-button type="text" class="option-button"  @click="tabClick('/status')">状态</el-button>&emsp;
+        <el-button type="text" class="option-button"  @click="tabClick('/about')">关于</el-button>&emsp;
     </div>
 </template>
 
 <script>
 export default {
     name: 'headBar',
+    methods:{
+        tabClick(path){
+            this.$router.push(
+                {
+                    path:path
+                }
+            )
+        }
+    }
 }
 </script>
 
@@ -20,6 +29,6 @@ export default {
 }
 
 .option-button {
-    color: black
+    color: #fff;
 }
 </style>
