@@ -4,9 +4,10 @@ import Router from "vue-router";
 import store from "./store/store";
 import ElementUI from 'element-ui';
 import routerConfig from "./router";
+import * as uiv from 'uiv'
 Vue.use(ElementUI);
 Vue.use(Router);
-
+Vue.use(uiv);
 Vue.config.productionTip = false
 
 const router = new Router({
@@ -15,8 +16,7 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-  console.log("要跳转的页面：",to)
-
+  // console.log("要跳转的页面：",to)
   next();
 });
 
