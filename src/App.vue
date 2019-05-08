@@ -1,10 +1,12 @@
 <template>
   <div id="app">
+    
     <div class="title">
       <shstitle></shstitle>
       <headBar></headBar>
     </div>
     <router-view></router-view>
+    
   </div>
 </template>
 
@@ -26,6 +28,14 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100%;
+}
+.lizi{
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .title {
   position: fixed;

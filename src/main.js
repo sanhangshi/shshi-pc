@@ -5,6 +5,8 @@ import store from "./store/store";
 import ElementUI from 'element-ui';
 import routerConfig from "./router";
 import * as uiv from 'uiv'
+import VueParticles from 'vue-particles'  
+Vue.use(VueParticles);  
 Vue.use(ElementUI);
 Vue.use(Router);
 Vue.use(uiv);

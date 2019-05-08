@@ -1,5 +1,6 @@
 <template>
   <div class="root">
+    <vue-particles  class="lizi" ></vue-particles>
     <div class="login-box">
       <el-card class="box-card1">
         <div class="card-body" @click="switchClick">
@@ -35,6 +36,19 @@
         </div>
       </el-card>
     </div>
+    <div class="left-bottom-box">
+      螃蟹在剥我的壳，笔记本在写我。
+      <br>漫天的我落在枫叶上雪花上。
+      <br>而你在想我。
+      <br>
+      <div class="author">—— 佚名</div>
+    </div>
+    <div class="right-top-box">
+      I love three things in the world,
+      <br>sun ,moon ,and you，
+      <br>sun for morning ,moon for night ,you forever.
+      <div class="author">—— Twilight</div>
+    </div>
   </div>
 </template>
 
@@ -51,10 +65,10 @@ export default {
       userName: "",
       password: "",
       rePassword: "",
-      code:""
+      code: ""
     },
     isRegister: true,
-    identifyCode:"8659"
+    identifyCode: "8659"
   }),
   components: {
     Identify
@@ -65,9 +79,9 @@ export default {
       this.isRegister = !this.isRegister;
       this.canvasClick();
     },
-    canvasClick(){
-        let randomNum = Math.floor(Math.random()*9000)+1000;
-        this.identifyCode = String(randomNum);
+    canvasClick() {
+      let randomNum = Math.floor(Math.random() * 9000) + 1000;
+      this.identifyCode = String(randomNum);
     }
   }
 };
@@ -75,10 +89,45 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.right-top-box {
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -webkit-transform: rotate(45deg); /* Safari 和 Chrome */
+  -o-transform: rotate(45deg); /* Opera */
+  height: auto;
+  position: absolute;
+  top: 140px;
+  right: 37px;
+  font-size: 24px;
+  color: #fff;
+  line-height: 55px;
+  text-align: center;
+}
+.author {
+  text-align: right;
+  padding-bottom: 30px;
+}
+view {
+  font-family: "黑体";
+}
+.left-bottom-box {
+  height: auto;
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: inline-block;
+  text-align: left;
+  writing-mode: vertical-rl;
+  color: #fff;
+  font-size: 24px;
+  line-height: 55px;
+  text-decoration: underline;
+}
 .identify {
-    margin-top: 3px;
-    margin-left: 6px;
-    border-radius: 4px;
+  margin-top: 3px;
+  margin-left: 6px;
+  border-radius: 4px;
 }
 .btn {
   width: 100%;
@@ -165,8 +214,8 @@ export default {
 }
 </style>
 <style>
-.el-input-group__append{
-    padding: 1px;
+.el-input-group__append {
+  padding: 1px;
 }
 </style>
 
