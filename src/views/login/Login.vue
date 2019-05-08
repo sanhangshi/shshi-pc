@@ -1,46 +1,172 @@
 <template>
-    <div class="root">
-        <div class="top-bg"></div>
-        <el-card class="box-card">
-           <div v-for="item in 30" :key="item">Login{{item}}</div>
-        </el-card>
+  <div class="root">
+    <div class="login-box">
+      <el-card class="box-card1">
+        <div class="card-body" @click="switchClick">
+          <div class="login-title">{{isRegister?'登录':'注册'}}</div>
+        </div>
+      </el-card>
+      <el-card class="box-card2">
+        <div class="card-body">
+          <div class="login-title">{{isRegister?'注册':'登录'}}</div>
+          <div class="box-title">三行诗</div>
+          <div class="line-box"></div>
+          <div class="form-box">
+            <div class="form-item">
+              <div class="item-name">用户名：</div>
+              <el-input class="item-input" v-model="form.userName"></el-input>
+            </div>
+            <div class="form-item">
+              <div class="item-name">密码：</div>
+              <el-input class="item-input" v-model="form.password"></el-input>
+            </div>
+            <div class="form-item" v-show="isRegister">
+              <div class="item-name">确认密码：</div>
+              <el-input class="item-input" v-model="form.rePassword"></el-input>
+            </div>
+            <div class="form-item">
+              <div class="item-name">验证码：</div>
+              <el-input class="item-input" v-model="form.code"></el-input>
+              <identify class="identify" :identifyCode="identifyCode" @canvasClick="canvasClick"></identify>
+            </div>
+          </div>
+
+          <el-button class="btn" type="primary" :loading="false">{{isRegister?"立 即 注 册":"立 即 登 录"}}</el-button>
+        </div>
+      </el-card>
     </div>
+  </div>
 </template>
 
 <script>
+import Identify from "@components/Identify.vue";
 export default {
-    name: "Login",
-    props: {
-        msg: String
+  name: "Login",
+  props: {
+    msg: String
+  },
+  data: () => ({
+    tableData: [],
+    form: {
+      userName: "",
+      password: "",
+      rePassword: "",
+      code:""
     },
-    data: () => ({
-        tableData: []
-    }),
-    mounted() {
-        
+    isRegister: true,
+    identifyCode:"8659"
+  }),
+  components: {
+    Identify
+  },
+  mounted() {},
+  methods: {
+    switchClick() {
+      this.isRegister = !this.isRegister;
+      this.canvasClick();
     },
-    methods: {
-        
+    canvasClick(){
+        let randomNum = Math.floor(Math.random()*9000)+1000;
+        this.identifyCode = String(randomNum);
     }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.root{
-    min-width: 100%;
-    min-height: 100vh;
-    display: inline-block;
-    text-align: center;
+.identify {
+    margin-top: 3px;
+    margin-left: 6px;
+    border-radius: 4px;
 }
-.top-bg{
-    background-color: #87CEEB;
-    height: 300px;
+.btn {
+  width: 100%;
+  margin-top: 50px;
 }
-.box-card{
-    margin-top: -50px;
-    width: 50%;
-    display: inline-block;
-    text-align: left;
+.form-box {
+  margin-top: 50px;
+}
+.item-name {
+  width: 100px;
+  text-align: left;
+}
+.item-input {
+  flex: 1;
+}
+.form-item {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.root {
+  min-width: 100%;
+  min-height: 100vh;
+  display: inline-block;
+  text-align: center;
+  background-color: #efefef;
+  background-image: url(https://api.dujin.org/bing/1920.php);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center 0;
+  background-size: cover;
+}
+.login-box {
+  width: 400px;
+  display: inline-block;
+  margin-top: 200px;
+  position: relative;
+}
+.box-card1 {
+  width: 100%;
+  height: 550px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  text-align: left;
+}
+.box-card2 {
+  width: 100%;
+  height: 550px;
+  position: absolute;
+  top: -40px;
+  left: 40px;
+  display: inline-block;
+  text-align: left;
+}
+.card-body {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+.login-title {
+  position: absolute;
+  left: -12px;
+  top: -12px;
+  width: 30px;
+  font-size: 18px;
+  font-family: "黑体";
+}
+.box-title {
+  text-align: center;
+  font-size: 24px;
+  font-family: "黑体";
+  width: 100%;
+  margin-top: 20px;
+}
+.line-box {
+  margin-top: 40px;
+  width: 100%;
+  height: 5px;
+  border-top: 1px solid #409eff;
+  border-bottom: 1px solid #409eff;
 }
 </style>
+<style>
+.el-input-group__append{
+    padding: 1px;
+}
+</style>
+
