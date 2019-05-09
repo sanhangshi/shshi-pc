@@ -153,8 +153,8 @@ view {
   min-height: 100vh;
   display: inline-block;
   text-align: center;
-  background-color: #efefef;
-  background-image: url(https://api.dujin.org/bing/1920.php);
+  /* background-image: url(https://api.dujin.org/bing/1920.php); */
+  background-image: url(https://api.dujin.org/pic/);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center 0;
