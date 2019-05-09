@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    
+    <router-view></router-view>
     <div class="title">
       <shstitle></shstitle>
       <headBar></headBar>
     </div>
-    <router-view></router-view>
+    
     
   </div>
 </template>
