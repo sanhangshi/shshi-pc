@@ -3,7 +3,7 @@
     <div style="display: inline-block">
       <div class="box-card preserve-3d">
         <div class="card1">
-          <el-card class="card1-item">
+          <el-card class="card1-item" style="background-color: rgba(255, 255, 255, 0.2);">
             <div class="left-bottom-box">
               螃蟹在剥我的壳，笔记本在写我。
               <br>漫天的我落在枫叶上雪花上。
@@ -25,7 +25,7 @@
           </el-card>
         </div>
         <div class="card2">
-          <el-card class="card2-item">
+          <el-card class="card2-item" style="background-color: rgba(255, 255, 255, 0.2);">
             <div class="comment-title">热门评论</div>
             <div class="comment-box">
               <div class="item-box" v-for="item in 4" :key="item">
@@ -186,7 +186,7 @@ div {
 </style>
 <style>
 .el-card {
-  background-color: rgba(255, 255, 255, 0.2);
+  /* background-color: rgba(255, 255, 255, 0.2); */
 }
 </style>
 
